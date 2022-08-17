@@ -53,13 +53,19 @@
             kutuya giriniz.
           </p>
           <form id="generate-form" class="mt-4">
-            <input
-              id="url"
-              type="url"
-              novalidate="novalidate"
-              placeholder="URL Giriniz"
-              class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none"
-            />
+            <div class="flex flex-wrap items-stretch w-full mb-4 relative">
+              <div class="flex -mr-px">
+                <span
+                  class="flex items-center leading-normal bg-gray-50 rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+                  >https://</span
+                >
+              </div>
+              <input
+                id="url"
+                type="text"
+                class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative"
+              />
+            </div>
             <select
               id="size"
               class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none mt-5"
@@ -74,6 +80,7 @@
             </select>
 
             <button
+              id="generateBtn"
               class="w-full bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded mt-5"
               type="submit"
             >

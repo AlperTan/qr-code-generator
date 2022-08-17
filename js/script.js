@@ -68,4 +68,14 @@ function pageScroll() {
 
 hideSpinner();
 
+const btn = document.getElementById("generateBtn");
+
+btn.addEventListener("click", () => {
+  btn.style.display = "none";
+
+  setTimeout(() => {
+    btn.style.display = "block";
+  }, 1000);
+});
+
 form.addEventListener("submit", onGenerateSubmit);
