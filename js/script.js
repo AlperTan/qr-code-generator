@@ -19,6 +19,12 @@ const onGenerateSubmit = (e) => {
 
       generateQRCode(url, size);
 
+      const btn = document.getElementById("generateBtn");
+
+      btn.addEventListener("click", () => {
+        btn.disabled = "disabled";
+      });
+
       setTimeout(() => {
         const saveUrl = qr.querySelector("img").src;
         createSaveBtn(saveUrl);
@@ -67,15 +73,5 @@ function pageScroll() {
 }
 
 hideSpinner();
-
-const btn = document.getElementById("generateBtn");
-
-btn.addEventListener("click", () => {
-  btn.style.display = "none";
-
-  setTimeout(() => {
-    btn.style.display = "block";
-  }, 1000);
-});
 
 form.addEventListener("submit", onGenerateSubmit);
