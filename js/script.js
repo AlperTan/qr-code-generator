@@ -14,16 +14,16 @@ const onGenerateSubmit = (e) => {
   } else {
     showSpinner();
 
+    const btn = document.getElementById("generateBtn");
+
+    btn.addEventListener("click", () => {
+      btn.disabled = "disabled";
+    });
+
     setTimeout(() => {
       hideSpinner();
 
       generateQRCode(url, size);
-
-      const btn = document.getElementById("generateBtn");
-
-      btn.addEventListener("click", () => {
-        btn.disabled = "disabled";
-      });
 
       setTimeout(() => {
         const saveUrl = qr.querySelector("img").src;
