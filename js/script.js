@@ -58,7 +58,7 @@ const createSaveBtn = (saveUrl) => {
     "bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded w-1/3 m-auto my-5";
   link.href = saveUrl;
   link.download = "qrcode";
-  link.innerHTML = "⭳ Kaydet";
+  link.innerHTML = "📥 Kaydet";
   document.getElementById("generated").appendChild(link);
 };
 
