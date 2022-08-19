@@ -1,5 +1,6 @@
 const form = document.getElementById("generate-form");
 const qr = document.getElementById("qrcode");
+const btn = document.getElementById("generateBtn");
 
 const onGenerateSubmit = (e) => {
   e.preventDefault();
@@ -14,16 +15,14 @@ const onGenerateSubmit = (e) => {
   } else {
     showSpinner();
 
-    const btn = document.getElementById("generateBtn");
-
-    btn.addEventListener("click", () => {
-      btn.disabled = "disabled";
-    });
+    disableGenerateButton();
 
     setTimeout(() => {
       hideSpinner();
 
       generateQRCode(url, size);
+
+      enableGenerateButton();
 
       setTimeout(() => {
         const saveUrl = qr.querySelector("img").src;
@@ -33,6 +32,16 @@ const onGenerateSubmit = (e) => {
       }, 50);
     }, 1000);
   }
+};
+
+const disableGenerateButton = () => {
+  btn.setAttribute('disabled', 'disabled');
+  btn.classList.add('cursor-not-allowed', 'opacity-50');
+};
+
+const enableGenerateButton = () => {
+  btn.removeAttribute('disabled');
+  btn.classList.remove('cursor-not-allowed', 'opacity-50');
 };
 
 const generateQRCode = (url, size) => {
